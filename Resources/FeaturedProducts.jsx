@@ -52,8 +52,39 @@ export const featuredproducts = [
     },{
         id: 10,
         image: "https://htmlbeans.com/html/botanical/images/img11.jpg",
-        description: "Sit voluptatem",
+        description: "Aliquam Quaerat Voluptatem",
         price: 68.00,
     }
     
 ]
+
+
+export const FreeShippingOrder = [
+    {
+        id: 1,
+        icon: "LiaTruckMovingSolid",
+        description: "Free shipping order",
+        text: "On orders over $100",
+      },
+    {
+      id: 2,
+      icon: "IoCallOutline",
+      description: "Customer support",
+      text: "Support 24 / 7",
+    },
+ 
+    {
+      id: 3,
+      icon: "FaRecycle",
+      description: "Return & exchange",
+      text: "Free return within 3 days",
+    },
+    {
+      id: 4,
+      icon: "FaMoneyCheckDollar",
+      description: "Secure checkout",
+      text: "Protected by Opay",
+    },
+  ];
+  
+  
