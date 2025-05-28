@@ -7,9 +7,9 @@ export const featuredproducts = [
     },
     {
         id: 2,
-        image: "https://htmlbeans.com/html/botanical/images/img03.jpg",
-        description: "Sit voluptatem",
-        price: 68.00,
+        image: "https://www-konga-com-res.cloudinary.com/w_500,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/W/B/239495_1740779890.jpg",
+        description: "Full Lace Braided Wigs With Frontal - 16",
+        price: "45,000",
     },
     {
         id: 3,
@@ -58,33 +58,5 @@ export const featuredproducts = [
     
 ]
 
-
-export const FreeShippingOrder = [
-    {
-        id: 1,
-        icon: "LiaTruckMovingSolid",
-        description: "Free shipping order",
-        text: "On orders over $100",
-      },
-    {
-      id: 2,
-      icon: "IoCallOutline",
-      description: "Customer support",
-      text: "Support 24 / 7",
-    },
- 
-    {
-      id: 3,
-      icon: "FaRecycle",
-      description: "Return & exchange",
-      text: "Free return within 3 days",
-    },
-    {
-      id: 4,
-      icon: "FaMoneyCheckDollar",
-      description: "Secure checkout",
-      text: "Protected by Opay",
-    },
-  ];
   
   

@@ -1,21 +1,9 @@
 import React from 'react';
 import { featuredproducts } from '../../../Resources/FeaturedProducts';
-import { FreeShippingOrder } from '../../../Resources/FeaturedProducts';
 
-import { IoCallOutline } from "react-icons/io5";
-import { LiaTruckMovingSolid } from "react-icons/lia";
-import { FaRecycle } from "react-icons/fa";
-import { FaMoneyCheckDollar } from "react-icons/fa6";
 
 function FeaturedProducts() {
-  // Icon map to dynamically render icons based on string keys
-  const iconMap = {
-    LiaTruckMovingSolid: LiaTruckMovingSolid,
-    IoCallOutline: IoCallOutline,
-    FaRecycle: FaRecycle,
-    FaMoneyCheckDollar: FaMoneyCheckDollar ,
-  };
-
+  
   return (
     <div>
       {/* Title Section */}
@@ -34,7 +22,7 @@ function FeaturedProducts() {
             <img
               src={item.image}
               alt={item.description}
-              className="w-full lg:w-60 object-contain mb-4"
+              className="w-full lg:w-full object-contain mb-4"
             />
             <p className="text-gray-600 text-center mt-3">{item.description}</p>
             <p className="text-xl font-bold text-black-600 mt-3">${item.price}</p>
@@ -47,7 +35,7 @@ function FeaturedProducts() {
 
 
       {/* Free Shipping / Services Grid */}
-      <div className="lg:mt-15 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:ml-50 mt-10">
+      {/* <div className="lg:mt-15 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:ml-50 mt-10">
         {FreeShippingOrder.map((item) => {
           const IconComponent = iconMap[item.icon]; // Get corresponding icon
           return (
@@ -63,11 +51,11 @@ function FeaturedProducts() {
             </div>
           );
         })}
-      </div>
+      </div> */}
 
 
                            {/* Yusuf Hassan - CEO */}
-                <div className="flex flex-col items-center justify-center px-4 py-20 text-center">
+                {/* <div className="flex flex-col items-center justify-center px-4 py-20 text-center">
                     <p className="text-gray-600 text-base md:text-lg lg:text-2xl  leading-relaxed">
                       We ship healthy potted plants right to your doorstep. <br />
                       Each plant comes with simple care instructions from <br />
@@ -83,7 +71,7 @@ function FeaturedProducts() {
                     <p className="text-gray-600 mt-4 text-sm md:text-base">
                       <strong>Yusuf Hassan – CEO</strong>
                     </p>
-              </div>
+              </div> */}
 
 
     </div>

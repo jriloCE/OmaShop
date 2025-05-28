@@ -7,7 +7,7 @@ import Handpicked from './Handpicked'
 
 function Index() {
   return (
-    <div className='px-8 lg:px-18'>
+    <div className='px-4 lg:px-18'>
            
             <Intro />
               

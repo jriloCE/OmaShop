@@ -3,6 +3,7 @@ import { topsales } from '../../../Resources/Topsales';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import { Link } from 'react-router-dom';
 
 function Topsales() {
   return (
@@ -14,7 +15,8 @@ function Topsales() {
       </div>
 
       {/* Swiper Carousel */}
-      <div className="mt-6">
+    <div className="mt-6">
+      <Link>
         <Swiper
           loop={true}
           autoplay={{
@@ -60,6 +62,7 @@ function Topsales() {
             </SwiperSlide>
           ))}
         </Swiper>
+      </Link>
       </div>
     </div>
   );
