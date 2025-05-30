@@ -17,6 +17,8 @@ function App() {
                       {/* <Route path="/about" element={<h1>About</h1>} />   */}
                  
                </Routes>
+
+               <Footer />
         
         </BrowserRouter>
 

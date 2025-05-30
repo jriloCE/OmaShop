@@ -1,8 +1,8 @@
 export const featuredproducts = [
     {
         id: 1,
-        image: "https://htmlbeans.com/html/botanical/images/img02.jpg",
-        description: "Sit voluptatem",
+        image: "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/05/097177/1.jpg",
+        description: "Ladies Trend Non Tarnish Exotic/Super Lasting Luxury Ladies Classic Set",
         price: 68.00,
     },
     {

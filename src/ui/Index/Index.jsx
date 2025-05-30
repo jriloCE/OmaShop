@@ -4,6 +4,7 @@ import Newarrival from './Newarrival'
 import Topsales from './Topsales'
 import FeaturedProducts from './FeaturedProducts'
 import Handpicked from './Handpicked'
+import OmasStore from './OmasStore'
 
 function Index() {
   return (
@@ -18,6 +19,8 @@ function Index() {
                 <FeaturedProducts />
 
                 <Handpicked />
+
+                <OmasStore />
 
     </div>
   )

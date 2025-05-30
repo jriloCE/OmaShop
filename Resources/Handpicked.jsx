@@ -37,7 +37,7 @@ export const handPicked = [
     },
     {
         id:7,
-        price:  "₦ 4,995",
+        price:  "4,995",
         image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/91/4846893/1.jpg",
         description: "Share this product European Woven Leather Bracelet Multi-Layer 4in1 Set",
     },

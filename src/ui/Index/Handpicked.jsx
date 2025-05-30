@@ -165,7 +165,7 @@ function Handpicked() {
                   <p className="text-gray-600 text-center text-sm line-clamp-2 mt-2">
                     {item.description}
                   </p>
-                  <p className="text-xl font-bold text-gray-800 mt-auto"># {item.price}</p>
+                  <p className="text-xl font-bold text-gray-800 mt-auto">₦ {item.price}</p>
                 </Link>
               </SwiperSlide>
             ))}
@@ -175,19 +175,21 @@ function Handpicked() {
 
         
       {/* Free Shipping / Services Grid */}
-      <div className="lg:mt-15 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:ml-50 mt-10">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
         {FreeShippingOrder.map((item) => {
-          const IconComponent = iconMap[item.icon]; // Get corresponding icon
+          const IconComponent = iconMap[item.icon]; 
           return (
             <div
               key={item.id}
-              className="border border-gray-200 p-4 flex flex-col items-center rounded shadow-sm bg-white"
+              className="border border-gray-200 flex justify-center items-center space-x-3 rounded bg-white"
             >
-              <span className="text-3xl text-[#FF496C] mb-2">
+              <span className="text-3xl text-[#FF496C]">
                 {IconComponent && <IconComponent />}
               </span>
-              <p className="text-xl text-center font-bold text-black-600 mt-3">{item.text}</p>
+              <div>
               <strong className="text-gray-600 text-center mt-3">{item.description}</strong>
+              <p className=" font-bold text-black-600">{item.text}</p>
+              </div>
             </div>
           );
         })}
