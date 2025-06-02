@@ -18,7 +18,7 @@ function OmasStore() {
 
           <div className="space-y-4 text-sm text-gray-700">
             <div>
-              <strong>Fragrances for Men & Women</strong>
+              <strong className='text-black'>Fragrances for Men & Women</strong>
               <p>
                 Discover long-lasting, original perfumes from top global brands. Whether you prefer bold, subtle, or
                 classic scents, we have something just for you.
@@ -26,21 +26,21 @@ function OmasStore() {
             </div>
 
             <div>
-              <strong>Watches that Define Style</strong>
+              <strong className='text-black'>Watches that Define Style</strong>
               <p>
                 Shop sleek, fashionable watches for men and women—perfect for everyday wear or special occasions.
               </p>
             </div>
 
             <div>
-              <strong>Stylish Bracelets</strong>
+              <strong className='text-black'>Stylish Bracelets</strong>
               <p>
                 Add flair to your outfit with our range of bracelets, from simple leather bands to elegant metallics.
               </p>
             </div>
 
             <div>
-              <strong>Luxury Women’s Hair</strong>
+              <strong className='text-black'>Luxury Women’s Hair</strong>
               <p>
                 Get flawless hair with our selection of wigs, extensions, and human hair bundles—authentic, durable,
                 and affordable.
@@ -48,7 +48,7 @@ function OmasStore() {
             </div>
 
             <div>
-              <strong>Why Shop with Us?</strong>
+              <strong className='text-black'>Why Shop with Us?</strong>
               <p>
                 At Oma'sStore, we prioritize quality and customer satisfaction. Our products are sourced from trusted
                 suppliers, ensuring you receive only the best.
@@ -56,7 +56,7 @@ function OmasStore() {
             </div>
 
             <div>
-              <strong>Secure Shopping Experience</strong>
+              <strong className='text-black'>Secure Shopping Experience</strong>
               <p>
                 Shop with confidence! Our website is secure, and we offer multiple payment options for your
                 convenience.
@@ -67,6 +67,16 @@ function OmasStore() {
               Enjoy fast delivery, affordable pricing, and 100% quality guarantee. Shop now at Oma'sStore—where style
               meets convenience.
             </p>
+
+                <img
+                    src="https://htmlbeans.com/html/botanical/images/signature.png"
+                    className="h-14 w-30 mt-6"
+                    loading="lazy"
+                    />
+
+                    <p className="text-black mt-4 text-sm md:text-base">
+                       <strong>Yusuf Hassan – CEO</strong>
+                    </p>
           </div>
         </div>
 

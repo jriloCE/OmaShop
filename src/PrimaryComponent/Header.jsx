@@ -17,7 +17,7 @@ function Header() {
                       <ul className='font-bold text-[14px] flex gap-15'>
                            <Link to="/"><li>HOME</li></Link>
                            <Link to="/about"><li>ABOUT</li></Link>
-                           <Link><li>SHOP</li></Link>
+                           <Link to="/shop"><li>SHOP</li></Link>
                            <Link><li>CONTACT</li></Link>
                       </ul>
                   </div>
