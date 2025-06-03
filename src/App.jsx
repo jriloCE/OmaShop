@@ -3,7 +3,7 @@ import Header from './PrimaryComponent/Header'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Index from './ui/Index/Index'
 import Footer from './PrimaryComponent/Footer'
-import Store from './ui/Store/Store'
+import Shop from './ui/Shop/Shop'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
               
                       <Route path="/" element={<Index />} />
                       {/* <Route path="/about" element={<h1>About</h1>} />   */}
-                      <Route path="/shop" element={<Store />} />
+                      <Route path="/shop" element={<Shop />} />
                  
                </Routes>
 

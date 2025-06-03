@@ -17,7 +17,7 @@ function FeaturedProducts() {
         {featuredproducts.map((item) => (
           <div
             key={item.id}
-            className="border border-gray-200 p-4 flex flex-col items-center rounded shadow-sm bg-white"
+            className="border h-[330px] border-gray-200 p-4 flex flex-col items-center rounded shadow-sm bg-white"
           >
             <img
               src={item.image}

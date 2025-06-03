@@ -17,7 +17,7 @@ export const OmasStoree = [
     {
        id:4,
         image:"https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/64/8749612/1.jpg",
-        description:"Share this product Forecast Original Quality No Fading Studded Skeleton Leather Designer Wristwatch"
+        description:"Forecast Original Quality No Fading Studded Skeleton Leather Designer Wristwatch"
 
     },
    {
@@ -28,7 +28,7 @@ export const OmasStoree = [
     {
        id:6,
          image:"https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/90/7772704/1.jpg",
-        description:"Ladies Unique Chain Bracelet"
+         description:"Ladies Unique Chain Bracelet"
     },
     {
         id:7,
