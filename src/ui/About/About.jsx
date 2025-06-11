@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaStar, FaUserFriends, FaShippingFast, FaShieldAlt } from 'react-icons/fa';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { Link } from 'react-router-dom';
+import LottiePlayer from './LottiePlayer'; 
 
 const fadeIn = {
   hidden: { opacity: 0, y: 40 },
@@ -80,13 +80,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-full h-[300px] md:h-[400px] overflow-hidden rounded-2xl shadow-lg relative z-10">
-            <DotLottieReact
-              src="https://assets2.lottiefiles.com/packages/lf20_9x5y7q.json"
-              autoplay
-              loop
-              style={{ width: '100%', height: '100%' }}
-            />
+          <div className="w-full h-[300px] md:h-[400px] overflow-hidden rounded-2xl shadow-lg place-items-center">
+            <LottiePlayer />
           </div>
         </motion.div>
       </section>
