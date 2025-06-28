@@ -56,8 +56,8 @@ function Topsales() {
                   alt={item.description}
                   className="w-full lg:w-60 object-contain mb-4"
                 />
-                <p className="text-gray-600 text-center mt-3">{item.description}</p>
-                <p className="text-xl font-bold text-black-600 mt-3">${item.price}</p>
+                <p className="text-gray-600 text-center mt-3 line-clamp-2">{item.description}</p>
+                <p className="text-xl font-bold text-black-600 mt-3">₦  {item.price}</p>
               </div>
             </SwiperSlide>
           ))}

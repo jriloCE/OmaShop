@@ -1,5 +1,5 @@
 import React from 'react';
-import { topsales } from '../../../Resources/Topsales';
+import { newarrival } from '../../../Resources/Newarrival';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -8,7 +8,7 @@ function Newarrival() {
   return (
     <div>
       {/* Title Section */}
-      <div className="flex gap-2 flex-col mt-8">
+      <div className="flex flex-col gap-2 mt-8">
         <h1 className="text-3xl font-bold">New Arrival</h1>
         <div className="h-[3px] w-25 rounded bg-[#FF496C]"></div>
       </div>
@@ -32,7 +32,7 @@ function Newarrival() {
               spaceBetween: 15,
             },
             768: {
-              slidesPerView: 2, // Still 2 on medium
+              slidesPerView: 2,
               spaceBetween: 20,
             },
             1024: {
@@ -46,16 +46,16 @@ function Newarrival() {
           }}
           className="mySwiper"
         >
-          {topsales.map((item) => (
+          {newarrival.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="border border-gray-200 p-4 flex flex-col items-center rounded shadow-sm bg-white">
+              <div className="flex flex-col items-center p-4 border border-gray-200 rounded shadow-sm bg-white">
                 <img
                   src={item.image}
                   alt={item.description}
                   className="w-full lg:w-60 object-contain mb-4"
                 />
-                <p className="text-gray-600 text-center mt-3">{item.description}</p>
-                <p className="text-xl font-bold text-black-600 mt-3">${item.price}</p>
+                <p className="mt-3 text-center text-gray-600 line-clamp-2">{item.description}</p>
+                <p className="mt-3 text-xl font-bold text-black-600">₦ {item.price}</p>
               </div>
             </SwiperSlide>
           ))}
