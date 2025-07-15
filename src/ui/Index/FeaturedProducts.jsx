@@ -1,15 +1,9 @@
 import React from 'react';
 import { featuredproducts } from '../../../Resources/FeaturedProducts';
-import { FiHeart } from 'react-icons/fi'; // ✅ Watchlist icon
+import { useCart } from '../Checkout/CartContext';
 
 function FeaturedProducts() {
-  const handleAddToCart = (item) => {
-    console.log('Added to cart:', item);
-  };
-
-  const handleWatchlist = (item) => {
-    console.log('Added to watchlist:', item);
-  };
+  const { addToCart } = useCart();
 
   return (
     <div className="mt-10">
@@ -30,19 +24,6 @@ function FeaturedProducts() {
               transition-transform hover:shadow-md
             "
           >
-            {/* Watchlist Button (smaller) */}
-            {/* <button
-              onClick={() => handleWatchlist(item)}
-              className="
-                absolute top-2 right-2 bg-gray-100 text-gray-600
-                hover:bg-pink-100 hover:text-pink-600
-                p-1.5 rounded-full shadow-sm transition duration-200
-              "
-              aria-label="Add to watchlist"
-            >
-              <FiHeart size={16} />
-            </button> */}
-
             {/* Product Image */}
             <img
               src={item.image}
@@ -63,8 +44,8 @@ function FeaturedProducts() {
 
             {/* Add to Cart Button */}
             <button
-              onClick={() => handleAddToCart(item)}
-              className="
+              onClick={() => addToCart(item)}
+              className=" 
                 w-full mt-4 border border-[#FF496C] text-[#FF496C] text-sm font-semibold
                 px-4 py-2 rounded-md transition duration-300 ease-in-out
                 hover:bg-[#FF496C] hover:text-white hover:scale-[1.02]

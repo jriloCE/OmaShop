@@ -3,8 +3,10 @@ import { MdSearch } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { shopProductsS } from '../../../Resources/ShopProducts';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { useCart } from '../Checkout/CartContext';
 
 function Shopproducts() {
+  const { addToCart } = useCart();
   const [sortOption, setSortOption] = useState('date');
   const [currentPage, setCurrentPage] = useState(1);
   const [value, setValue] = useState(50);
@@ -32,11 +34,11 @@ function Shopproducts() {
       <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
         {/* Logo */}
         <div className="flex items-center justify-center">
-          <img
+          {/* <img
             src="https://tunatheme.com/tf/html/fiama-preview/fiama/img/logo.png"
             alt="logo"
             className="object-contain"
-          />
+          /> */}
         </div>
 
         {/* Search Input */}
@@ -47,7 +49,7 @@ function Shopproducts() {
           <input
             type="text"
             placeholder="Search Product, brands and categories"
-            className="w-full border border-gray-300 rounded-md pl-10 pr-4 py-2 text-lg focus:outline-none focus:ring-1 focus:ring-[#FF496C]"
+            className="w-full border border-gray-300 rounded-md pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-[#FF496C]"
           />
         </div>
 
@@ -75,7 +77,7 @@ function Shopproducts() {
         {/* ──────── Categories Sidebar ──────── */}
         <div className="w-full lg:w-1/4">
           <h1 className="font-extrabold text-[18px] text-black">PRODUCT CATEGORIES</h1>
-          <div className="flex flex-col gap-2 lg:gap-4 text-[16px] text-gray-500 font-semibold mt-4">
+          <div className="flex flex-col gap-2 lg:gap-4 text-sm text-gray-500 font-semibold mt-4">
             <Link>Watches</Link>
             <Link>Fragrances for Men & Women</Link>
             <Link>Stylish Bracelets</Link>
@@ -102,23 +104,35 @@ function Shopproducts() {
         </div>
 
         {/* ──────── Products and Pagination ──────── */}
-        <div className="w-full lg:w-3/4 flex flex-col">
+        <div className="w-full flex flex-col">
           {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {currentItems.map((item) => (
               <Link
                 key={item.id}
-                className="border h-[300px] border-gray-200 p-4 flex flex-col items-center rounded shadow-sm bg-white"
+                className="border border-gray-200 p-4 flex flex-col rounded shadow-sm bg-white"
               >
                 <img
                   src={item.image}
                   alt={item.description}
                   className="w-full object-contain mb-4 h-[150px]"
                 />
-                <p className="text-gray-600 text-center line-clamp-2 mt-3">
+                <p className="text-gray-600 text-sm line-clamp-2 mt-3">
                   {item.description}
                 </p>
-                <p className="text-xl font-bold text-black mt-3">₦ {item.price}</p>
+                <p className="text-[17px] font-bold text-gray-600 mt-3">₦ {item.price}</p>
+
+                    {/* Add to Cart Button */}
+
+                   <button onClick={() => addToCart(item)}
+              className=" 
+                w-full mt-4 border border-[#FF496C] text-[#FF496C] text-sm font-semibold
+                px-4 py-2 rounded-md transition duration-300 ease-in-out
+                hover:bg-[#FF496C] hover:text-white hover:scale-[1.02]
+              "
+            >
+              Add to Cart
+            </button> 
               </Link>
             ))}
           </div>

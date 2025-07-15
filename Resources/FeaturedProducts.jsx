@@ -9,7 +9,7 @@ export const featuredproducts = [
         id: 2,
         image: "https://www-konga-com-res.cloudinary.com/w_500,f_auto,fl_lossy,dpr_auto,q_auto/media/catalog/product/W/B/239495_1740779890.jpg",
         description: "Full Lace Braided Wigs With Frontal - 16",
-        price: "45,000",
+        price: 45.000,
     },
     {
         id: 3,

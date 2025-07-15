@@ -3,8 +3,12 @@ import { MdSupervisorAccount, MdSearch } from 'react-icons/md';
 import { FaRegHeart } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import { useCart } from '../ui/Checkout/CartContext';
 
 function Header() {
+  const { cart } = useCart();
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
     <header className="bg-white shadow-md w-full">
       <div className="container mx-auto px-4 py-4">
@@ -25,8 +29,13 @@ function Header() {
             <Link to="/account" className="hover:text-[#FF496C] transition">
               <MdSupervisorAccount />
             </Link>
-            <Link to="/cart" className="hover:text-[#FF496C] transition">
+            <Link to="/cart" className="hover:text-[#FF496C] transition relative">
               <IoCartOutline />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {totalItems}
+                </span>
+              )}
             </Link>
             <Link to="/wishlist" className="hover:text-[#FF496C] transition">
               <FaRegHeart />
@@ -35,7 +44,7 @@ function Header() {
         </div>
 
         {/* Large Screen Grid (unchanged) */}
-        <div className="hidden lg:grid grid-cols-12 gap-4 items-center">
+        <div className="hidden lg:grid grid-cols-12 gap-4 items-center fixed w-full top-0 left-0 bg-white shadow-md z-50 px-4 py-3">
           {/* Logo */}
           <div className="col-span-3 flex justify-center lg:justify-start">
             <Link to="/">
@@ -67,8 +76,13 @@ function Header() {
             <Link to="/account" className="hover:text-[#FF496C] transition">
               <MdSupervisorAccount />
             </Link>
-            <Link to="/cart" className="hover:text-[#FF496C] transition">
+            <Link to="/cart" className="hover:text-[#FF496C] transition relative">
               <IoCartOutline />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {totalItems}
+                </span>
+              )}
             </Link>
             <Link to="/wishlist" className="hover:text-[#FF496C] transition">
               <FaRegHeart />
