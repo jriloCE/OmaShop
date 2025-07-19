@@ -10,6 +10,11 @@ import { CartProvider } from './ui/Checkout/CartContext';
 import CartPage from './ui/Checkout/CartPage';
 import CheckoutPage from './ui/Checkout/CheckoutPage';
 import { Toaster } from "react-hot-toast";
+import SignupForm from './ui/SignUpForm/SignupForm';
+import LoginForm from './ui/SignUpForm/LoginForm';
+// import ProductDetail from './ui/ProductDetail.jsx/ProductDetail';
+
+
 
 function App() {
   return (
@@ -25,8 +30,38 @@ function App() {
 
           <Route path="/cart" element={<CartPage />} />
           <Route path='checkout' element={<CheckoutPage />}/>
+          {/* <Route path="/singleproduct" element={<ProductDetail />} /> */}
+          <Route path="/register" element={<SignupForm />} />
+          <Route path="/login" element={<LoginForm />} />
+        
         </Routes>
-          <Toaster position="botton-left" />
+
+
+            <Toaster
+              position="bottom-right"
+              gutter={12}
+              containerStyle={{ margin: '1rem' }}
+              toastOptions={{
+                className: '',
+                style: {
+                  border: 'none',
+                  padding: '16px',
+                  color: '#fff',
+                  background: '#ff496c',
+                  borderRadius: '12px',
+                  width: 'fit-content',
+                },
+                duration: 3000,
+                success: {
+                  iconTheme: {
+                    primary: '#fff',
+                    secondary: '#0f1419',
+                  },
+                },
+              }}
+            />
+
+
 
         <Footer />
       </div>

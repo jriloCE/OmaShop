@@ -1,5 +1,7 @@
 import { useCart } from "./CartContext";
 import { Link } from "react-router-dom";
+import LottiePlayer from "../About/LottiePlayer";
+
 
 const CartPage = () => {
   const {
@@ -16,10 +18,16 @@ const CartPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
-      <h2 className="text-3xl font-bold mb-6">Shopping Cart</h2>
-
       {cart.length === 0 ? (
-        <p className="text-gray-600 text-lg">Your cart is currently empty.</p>
+        <div className="">
+          <div className="flex flex-col items-center justify-center space-y-4">
+               <LottiePlayer />
+            <p className="text-gray-600 text-lg">Your cart is currently empty.</p>
+             <Link to="/" className="px-4 py-2 bg-pink-600 text-white rounded hover:bg-pink-700">
+                  Start Shopping
+            </Link>
+          </div>
+        </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items Section */}
@@ -33,7 +41,7 @@ const CartPage = () => {
                   <img
                     src={item.image}
                     alt={item.description}
-                    className="w-24 h-24 object-cover rounded-md border  border-gray-200"
+                    className="w-24 h-24 object-cover rounded-md border border-gray-200"
                   />
                   <div>
                     <h3 className="text-lg font-semibold">{item.description}</h3>
@@ -92,19 +100,19 @@ const CartPage = () => {
               </div>
             </div>
 
-            <a
-              href="/checkout"
+            <Link
+              to="/checkout"
               className="block w-full text-center mt-6 bg-[#ff496c] text-white py-3 rounded hover:bg-green-700 transition"
             >
               Proceed to Checkout
-            </a>
+            </Link>
 
-            <a
-              href="/"
+            <Link
+              to="/"
               className="block w-full text-center mt-3 text-[#ff496c] hover:underline"
             >
               ← Continue Shopping
-            </a>
+            </Link>
           </div>
         </div>
       )}

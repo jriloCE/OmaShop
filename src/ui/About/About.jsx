@@ -80,7 +80,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-full h-[300px] md:h-[400px] overflow-hidden rounded-2xl shadow-lg place-items-center">
+          <div className="w-full h-[300px] md:h-[400px] overflow-hidden place-items-center">
             <LottiePlayer />
           </div>
         </motion.div>

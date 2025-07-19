@@ -20,7 +20,7 @@ function LottiePlayer() {
   }
 
   return (
-    <div style={{ width: '100%', maxWidth: 500, height: 500, margin: '0 auto' }}>
+    <div style={{maxWidth: 370, height: 370, margin: '0 auto' }}>
       {animationData ? (
         <Lottie animationData={animationData} loop={true} />
       ) : (
