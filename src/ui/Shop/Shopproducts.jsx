@@ -110,6 +110,7 @@ function Shopproducts() {
             {currentItems.map((item) => (
               <Link
                 key={item.id}
+                to={`/product/${item.id}`}
                 className="border border-gray-200 p-4 flex flex-col rounded shadow-sm bg-white"
               >
                 <img
@@ -124,7 +125,11 @@ function Shopproducts() {
 
                     {/* Add to Cart Button */}
 
-                   <button onClick={() => addToCart(item)}
+                   <button 
+              onClick={(e) => {
+                e.preventDefault(); // Prevent navigation
+                addToCart(item);
+              }}
               className=" 
                 w-full mt-4 border border-[#FF496C] text-[#FF496C] text-sm font-semibold
                 px-4 py-2 rounded-md transition duration-300 ease-in-out

@@ -12,7 +12,7 @@ import CheckoutPage from './ui/Checkout/CheckoutPage';
 import { Toaster } from "react-hot-toast";
 import SignupForm from './ui/SignUpForm/SignupForm';
 import LoginForm from './ui/SignUpForm/LoginForm';
-// import ProductDetail from './ui/ProductDetail.jsx/ProductDetail';
+import ProductDetail from './ui/ProductDetail.jsx/ProductDetail.jsx';
 
 
 
@@ -30,7 +30,7 @@ function App() {
 
           <Route path="/cart" element={<CartPage />} />
           <Route path='checkout' element={<CheckoutPage />}/>
-          {/* <Route path="/singleproduct" element={<ProductDetail />} /> */}
+          <Route path="/product/:productId" element={<ProductDetail />} />
           <Route path="/register" element={<SignupForm />} />
           <Route path="/login" element={<LoginForm />} />
         

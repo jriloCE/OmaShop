@@ -16,7 +16,7 @@ function Topsales() {
 
       {/* Swiper Carousel */}
     <div className="mt-6">
-      <Link>
+      <div>
         <Swiper
           loop={true}
           autoplay={{
@@ -62,7 +62,7 @@ function Topsales() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </Link>
+      </div>
       </div>
     </div>
   );
