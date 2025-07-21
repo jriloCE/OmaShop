@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { MdSupervisorAccount, MdSearch } from 'react-icons/md';
 import { FaRegHeart } from 'react-icons/fa';
 import { IoCartOutline } from 'react-icons/io5';
@@ -8,6 +8,22 @@ import { useCart } from '../ui/Checkout/CartContext';
 function Header() {
   const { cart } = useCart();
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const [showAccountMenu, setShowAccountMenu] = useState(false);
+  const accountMenuRef = useRef(null);
+  
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (accountMenuRef.current && !accountMenuRef.current.contains(event.target)) {
+        setShowAccountMenu(false);
+      }
+    }
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <header className="bg-white shadow-md w-full">
@@ -26,9 +42,29 @@ function Header() {
 
           {/* Icons (right) */}
           <div className="flex gap-5 text-2xl text-gray-700">
-            <Link to="/account" className="hover:text-[#FF496C] transition">
-              <MdSupervisorAccount />
-            </Link>
+            <div className="relative" ref={accountMenuRef}>
+              <button 
+                className="hover:text-[#FF496C] transition" 
+                onClick={() => setShowAccountMenu(!showAccountMenu)}
+              >
+                <MdSupervisorAccount />
+              </button>
+              
+              {/* Account Dropdown Menu */}
+              {showAccountMenu && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
+                  <Link to="/register" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowAccountMenu(false)}>
+                    Sign Up
+                  </Link>
+                  <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowAccountMenu(false)}>
+                    Profile
+                  </Link>
+                  <Link to="/orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowAccountMenu(false)}>
+                    Order List
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link to="/cart" className="hover:text-[#FF496C] transition relative">
               <IoCartOutline />
               {totalItems > 0 && (
@@ -43,7 +79,7 @@ function Header() {
           </div>
         </div>
 
-        {/* Large Screen Grid (unchanged) */}
+        {/* Large Screen Grid */}
         <div className="hidden lg:grid grid-cols-12 gap-4 items-center fixed w-full top-0 left-0 bg-white shadow-md z-50 px-4 py-3">
           {/* Logo */}
           <div className="col-span-3 flex justify-center lg:justify-start">
@@ -73,9 +109,30 @@ function Header() {
 
           {/* Icons */}
           <div className="col-span-3 flex justify-end gap-6 text-2xl text-gray-700">
-            <Link to="/account" className="hover:text-[#FF496C] transition">
-              <MdSupervisorAccount />
-            </Link>
+            <div className="relative" ref={accountMenuRef}>
+              <button 
+                className="hover:text-[#FF496C] transition" 
+                onClick={() => setShowAccountMenu(!showAccountMenu)}
+              >
+                <MdSupervisorAccount />
+              </button>
+              
+              {/* Account Dropdown Menu */}
+              {showAccountMenu && (
+                <div className="absolute right-0 lg:mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
+                  <Link to="/register" className="block px-4 py-2 text-sm text-center bg-[#FF496C] text-white rounded" onClick={() => setShowAccountMenu(false)}>
+                    Sign In
+                  </Link>
+
+                  <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowAccountMenu(false)}>
+                    Profile
+                  </Link>
+                  <Link to="/orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowAccountMenu(false)}>
+                    Order List
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link to="/cart" className="hover:text-[#FF496C] transition relative">
               <IoCartOutline />
               {totalItems > 0 && (
