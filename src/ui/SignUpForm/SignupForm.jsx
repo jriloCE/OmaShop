@@ -7,6 +7,7 @@ function SignupForm() {
   const [showAlert, setShowAlert] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
 
+
   const handleDummySubmit = (e) => {
     e.preventDefault();
     if (agreedToTerms) {
@@ -114,7 +115,7 @@ function SignupForm() {
           </div>
 
           {/* Terms & Conditions */}
-          {/* <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <input
               type="checkbox"
               id="terms"
@@ -128,7 +129,7 @@ function SignupForm() {
                 terms & conditions
               </Link>
             </label>
-          </div> */}
+          </div>
 
           {/* Submit */}
           <button
