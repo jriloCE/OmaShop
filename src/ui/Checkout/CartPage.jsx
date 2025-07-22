@@ -12,7 +12,11 @@ const CartPage = () => {
   } = useCart();
 
   const totalPrice = cart.reduce(
-    (total, item) => total + Number(item.price) * item.quantity,
+    (total, item) => {
+      // Remove commas and convert to number
+      const price = Number(String(item.price).replace(/,/g, ''));
+      return total + price * item.quantity;
+    },
     0
   );
 
@@ -46,7 +50,7 @@ const CartPage = () => {
                   <div>
                     <h3 className="text-lg font-semibold">{item.description}</h3>
                     <p className="text-gray-500 text-sm mt-1">
-                      Price: ₦{Number(item.price).toFixed(2)}
+                      Price: ₦{item.price}
                     </p>
                   </div>
                 </div>
@@ -69,7 +73,7 @@ const CartPage = () => {
 
                 <div className="text-right sm:text-left">
                   <p className="font-bold text-lg">
-                    {(Number(item.price) * item.quantity).toFixed(2)}
+                    ₦{(Number(String(item.price).replace(/,/g, '')) * item.quantity).toLocaleString()}
                   </p>
                   <button
                     onClick={() => removeFromCart(item.id)}
@@ -88,7 +92,7 @@ const CartPage = () => {
             <div className="space-y-2">
               <div className="flex justify-between text-gray-700">
                 <span>Subtotal</span>
-                <span>${totalPrice.toFixed(2)}</span>
+                <span>₦{totalPrice.toLocaleString()}</span>
               </div>
               <div className="flex justify-between text-gray-700">
                 <span>Shipping</span>
@@ -96,7 +100,7 @@ const CartPage = () => {
               </div>
               <div className="border-t pt-4 mt-4 flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span>${totalPrice.toFixed(2)}</span>
+                <span>₦{totalPrice.toLocaleString()}</span>
               </div>
             </div>
 

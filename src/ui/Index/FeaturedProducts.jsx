@@ -2,6 +2,7 @@ import React from 'react';
 import { featuredproducts } from '../../../Resources/FeaturedProducts';
 import { useCart } from '../Checkout/CartContext';
 
+
 function FeaturedProducts() {
   const { addToCart } = useCart();
 
@@ -14,7 +15,7 @@ function FeaturedProducts() {
       </div>
 
       {/* Products Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-6">
         {featuredproducts.map((item) => (
           <div
             key={item.id}
@@ -37,22 +38,14 @@ function FeaturedProducts() {
                 {item.description}
               </p>
 
-              <p className="text-xl font-bold text-black text-center mt-3">
+              {/* <p className="text-sm font-bold text-black text-center mt-3">
                 ₦ {item.price}
-              </p>
+              </p> */}
             </div>
 
             {/* Add to Cart Button */}
-            <button
-              onClick={() => addToCart(item)}
-              className=" 
-                w-full mt-4 border border-[#FF496C] text-[#FF496C] text-sm font-semibold
-                px-4 py-2 rounded-md transition duration-300 ease-in-out
-                hover:bg-[#FF496C] hover:text-white hover:scale-[1.02]
-              "
-            >
-              Add to Cart
-            </button>
+          
+
           </div>
         ))}
       </div>

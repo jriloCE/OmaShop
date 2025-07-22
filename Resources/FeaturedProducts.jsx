@@ -54,6 +54,16 @@ export const featuredproducts = [
         image: "https://htmlbeans.com/html/botanical/images/img11.jpg",
         description: "Aliquam Quaerat Voluptatem",
         price: 68.00,
+    },{
+        id: 11,
+        image: "https://htmlbeans.com/html/botanical/images/img11.jpg",
+        description: "Aliquam Quaerat Voluptatem",
+        price: 68.00,
+    },{
+        id: 12,
+        image: "https://htmlbeans.com/html/botanical/images/img11.jpg",
+        description: "Aliquam Quaerat Voluptatem",
+        price: 68.00,
     }
     
 ]

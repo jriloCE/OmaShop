@@ -1,23 +1,31 @@
 import React from "react";
-import { useCart } from "../context/CartContext";
-import { toast } from "react-toastify";
+import { useCart } from "../ui/Checkout/CartContext";
 
-const AddToCartButton = ({ product, className = "" }) => {
+
+const AddToCartButton = ({ product, className = "", buttonText = "Add to Cart", showQuantity = false }) => {
   const { addToCart } = useCart();
+
+
+  const { cart } = useCart();
+  const itemInCart = showQuantity ? cart.find(item => item.id === product.id) : null;
 
   const handleAdd = () => {
     addToCart(product);
-    toast.success(`${product.name || product.description} added to cart!`);
   };
 
   return (
     <button
       onClick={handleAdd}
-      className={` w-full mt-4 border border-[#FF496C] text-[#FF496C] text-sm font-semibold
+      className={`w-full mt-4 border border-[#FF496C] text-[#FF496C] text-sm font-semibold
             px-4 py-2 rounded-md transition duration-300 ease-in-out
             hover:bg-[#FF496C] hover:text-white hover:scale-[1.02] ${className}`}
     >
-      Add to Cart
+      {buttonText}
+      {showQuantity && itemInCart && (
+        <span className="ml-2 bg-white text-[#FF496C] px-2 py-0.5 rounded-full text-xs">
+          {itemInCart.quantity}
+        </span>
+      )}
     </button>
   );
 };

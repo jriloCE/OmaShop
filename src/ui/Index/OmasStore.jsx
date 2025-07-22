@@ -93,7 +93,7 @@ function OmasStore() {
         <div className="w-full lg:w-1/2">
           <h1 className="text-2xl font-bold text-center mb-4">Explore Our Collections:</h1>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
             {OmasStoree.map((item) => (
               <Link
                 key={item.id}

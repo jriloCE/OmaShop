@@ -11,17 +11,18 @@ const cartReducer = (state, action) => {
     case "ADD_TO_CART": {
       const product = action.payload;
       const existingItem = state.find(item => item.id === product.id);
+      const quantityToAdd = product.quantity || 1;
 
       if (existingItem) {
-        // If item already in cart, increase quantity
+        // If item already in cart, increase quantity by the specified amount
         return state.map(item =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + quantityToAdd }
             : item
         );
       } else {
-        // Otherwise, add new item with quantity 1
-        return [...state, { ...product, quantity: 1 }];
+        // Otherwise, add new item with the specified quantity
+        return [...state, { ...product, quantity: quantityToAdd }];
       }
     }
 
@@ -58,9 +59,10 @@ export const CartProvider = ({ children }) => {
   }, [cart]);
 
   // Cart operation functions
-  const addToCart = (product) => {
-    dispatch({ type: "ADD_TO_CART", payload: product });
-    toast.success(`${product.description.slice(0, 30)} added to cart`);
+  const addToCart = (product, quantity = 1) => {
+    const productToAdd = { ...product, quantity: quantity };
+    dispatch({ type: "ADD_TO_CART", payload: productToAdd });
+    toast.success(`${product.description?.slice(0, 30) || 'Product'} added to cart`);
   };
 
   const removeFromCart = (productId) => {

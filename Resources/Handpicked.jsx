@@ -77,4 +77,27 @@ export const FreeShippingOrder = [
       description: "Secure checkout",
       text: "Protected by Opay",
     },
+    {
+      id: 5,
+      icon: "FaMoneyCheckDollar",
+      description: "Secure checkout",
+      text: "Protected by Opay",
+    },
+    {
+      id: 6,
+      icon: "FaMoneyCheckDollar",
+      description: "Secure checkout",
+      text: "Protected by Opay",
+    }, {
+      id: 7,
+      icon: "FaMoneyCheckDollar",
+      description: "Secure checkout",
+      text: "Protected by Opay",
+    },
+     {
+      id: 8,
+      icon: "FaMoneyCheckDollar",
+      description: "Secure checkout",
+      text: "Protected by Opay",
+    },
   ];
