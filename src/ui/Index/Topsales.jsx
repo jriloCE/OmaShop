@@ -1,5 +1,5 @@
 import React from 'react';
-import { topsales } from '../../../Resources/Topsales';
+import { topsales } from '../../../Resources/TopSales';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';

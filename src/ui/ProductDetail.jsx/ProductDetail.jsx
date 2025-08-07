@@ -17,7 +17,6 @@ import { handPicked } from '../../../Resources/Handpicked'
 
 function ProductDetail() {
   const { source, id } = useParams()
-  const [selectedImage, setSelectedImage] = useState(0)
   const [quantity, setQuantity] = useState(1)
   const [activeTab, setActiveTab] = useState('overview')
 
@@ -44,12 +43,7 @@ function ProductDetail() {
     return <div className='text-center py-20'>Product not found</div>
   }
 
-  const images = [
-    product.image,
-    'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=500',
-    'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=500',
-    'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500'
-  ]
+
 
   return (
     <div className='bg-[#F5F5F5] min-h-screen px-4 py-10'>
@@ -60,23 +54,10 @@ function ProductDetail() {
           <div>
             <div className='h-[300px] md:h-[450px] w-full rounded-lg overflow-hidden'>
               <img
-                src={images[selectedImage]}
+                src={product.image}
                 alt='Product'
-                className='h-full w-full object-contain'
+                className='h-full w-full rounded object-contain'
               />
-            </div>
-            <div className='flex mt-4 space-x-2 overflow-x-auto'>
-              {images.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`Thumbnail ${index}`}
-                  onClick={() => setSelectedImage(index)}
-                  className={`h-16 w-16 object-cover rounded cursor-pointer border ${
-                    selectedImage === index ? 'border-black' : 'border-gray-300'
-                  }`}
-                />
-              ))}
             </div>
           </div>
 
