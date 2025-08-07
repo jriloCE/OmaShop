@@ -94,7 +94,7 @@ function Newarrival() {
         >
           {newarrival.map((item) => (
             <SwiperSlide key={item.id}>
-              <Link className="flex flex-col items-center p-4 border border-gray-200 rounded shadow-sm bg-white">
+              <Link to={`/product/newarrival/${item.id}`} className="flex flex-col items-center p-4 border border-gray-200 rounded shadow-sm bg-white">
                 <img
                   src={item.image}
                   alt={item.description}

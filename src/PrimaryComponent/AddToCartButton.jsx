@@ -13,6 +13,7 @@ const AddToCartButton = ({ product, className = "", buttonText = "Add to Cart", 
     addToCart(product);
   };
 
+  
   return (
     <button
       onClick={handleAdd}

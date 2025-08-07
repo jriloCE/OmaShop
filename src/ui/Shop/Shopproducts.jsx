@@ -110,7 +110,7 @@ function Shopproducts() {
             {currentItems.map((item) => (
               <Link
                 key={item.id}
-                to={`/product/${item.id}`}
+                to={`/product/shop/${item.id}`}
                 className="border border-gray-200 p-4 flex flex-col rounded shadow-sm bg-white"
               >
                 <img

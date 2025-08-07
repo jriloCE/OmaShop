@@ -23,11 +23,11 @@ const CartPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       {cart.length === 0 ? (
-        <div className="">
+        <div className="text-center py-20">
           <div className="flex flex-col items-center justify-center space-y-4">
-               <LottiePlayer />
+            <LottiePlayer />
             <p className="text-gray-600 text-lg">Your cart is currently empty.</p>
-             <Link to="/" className="px-4 py-2 bg-pink-600 text-white rounded hover:bg-pink-700">
+             <Link to="/" className="px-4 py-2 bg-[#ff496c] text-white rounded hover:bg-pink-700">
                   Start Shopping
             </Link>
           </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { featuredproducts } from '../../../Resources/FeaturedProducts';
 import { useCart } from '../Checkout/CartContext';
 
@@ -17,8 +18,9 @@ function FeaturedProducts() {
       {/* Products Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-6">
         {featuredproducts.map((item) => (
-          <div
+          <Link
             key={item.id}
+            to={`/product/featured/${item.id}`}
             className="
               relative flex flex-col justify-between border border-gray-200
               rounded-lg bg-white shadow-sm p-4 h-full
@@ -37,16 +39,8 @@ function FeaturedProducts() {
               <p className="text-gray-600 text-center text-sm line-clamp-2">
                 {item.description}
               </p>
-
-              {/* <p className="text-sm font-bold text-black text-center mt-3">
-                ₦ {item.price}
-              </p> */}
             </div>
-
-            {/* Add to Cart Button */}
-          
-
-          </div>
+          </Link>
         ))}
       </div>
     </div>

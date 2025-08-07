@@ -68,7 +68,7 @@ function Handpicked() {
           {handPicked.map((item, index) => (
             <SwiperSlide key={item.id} virtualIndex={index}>
               <div className="h-[280px] mt-2 w-full border border-gray-200 p-4 flex flex-col items-center rounded shadow-sm relative group bg-white">
-                <Link to={`/product/${item.id}`} className="w-full">
+                <Link to={`/product/handpicked/${item.id}`} className="w-full">
                   <img
                     src={item.image}
                     alt={item.description}

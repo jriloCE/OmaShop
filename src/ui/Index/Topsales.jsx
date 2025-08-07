@@ -50,7 +50,7 @@ function Topsales() {
         >
           {topsales.map((item) => (
             <SwiperSlide key={item.id}>
-              <div className="border border-gray-200 p-4 flex flex-col items-center rounded shadow-sm bg-white">
+              <Link to={`/product/topsales/${item.id}`} className="border border-gray-200 p-4 flex flex-col items-center rounded shadow-sm bg-white">
                 <img
                   src={item.image}
                   alt={item.description}
@@ -58,7 +58,7 @@ function Topsales() {
                 />
                 <p className="text-gray-600 text-center text-sm mt-3 line-clamp-2">{item.description}</p>
                 <p className="text-sm font-bold text-black-600 mt-3">₦  {item.price}</p>
-              </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
