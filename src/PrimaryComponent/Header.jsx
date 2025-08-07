@@ -119,8 +119,8 @@ function Header() {
               
               {/* Account Dropdown Menu */}
               {showAccountMenu && (
-                <div className="absolute right-0 lg:mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
-                  <Link to="/register" className="block px-4 py-2 text-sm text-center bg-[#FF496C] text-white rounded" onClick={() => setShowAccountMenu(false)}>
+                <div className="absolute right-0 mt-3 w-48 bg-white rounded-md shadow-lg py-7 z-50 border border-gray-200">
+                  <Link to="/register" className="block mx-5 px-2 py-3 mt-[-12px] text-sm text-center bg-[#FF496C] text-white rounded" onClick={() => setShowAccountMenu(false)}>
                     Sign In
                   </Link>
 

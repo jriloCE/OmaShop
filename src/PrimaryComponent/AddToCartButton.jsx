@@ -23,7 +23,7 @@ const AddToCartButton = ({ product, className = "", buttonText = "Add to Cart", 
       {buttonText}
       {showQuantity && itemInCart && (
         <span className="ml-2 bg-white text-[#FF496C] px-2 py-0.5 rounded-full text-xs">
-          {itemInCart.quantity}
+            {itemInCart.quantity}
         </span>
       )}
     </button>
