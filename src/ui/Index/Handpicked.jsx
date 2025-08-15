@@ -86,7 +86,7 @@ function Handpicked() {
       </div>
 
       {/* Free Shipping / Services Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
+  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
   {FreeShippingOrder.slice(0, 4).map((item) => {
     const IconComponent = iconMap[item.icon];
     return (
