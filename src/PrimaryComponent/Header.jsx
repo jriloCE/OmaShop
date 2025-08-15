@@ -36,7 +36,7 @@ function Header() {
             <img
               src="https://tunatheme.com/tf/html/fiama-preview/fiama/img/logo.png"
               alt="Fiama Logo"
-              className="h-8 object-contain"
+              className="h-6 object-contain"
             />
           </Link>
 
