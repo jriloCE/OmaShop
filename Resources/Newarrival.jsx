@@ -1,8 +1,8 @@
 export const newarrival = [
     {
         id: 1,
-        image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/74/323254/1.jpg",
-        description: "EMPER Alessa Female In Pink For Women- Eau De Parfum, 100ml",
+        image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/73/9780714/1.jpg",
+        description: "Share this product Fragrance World NOCTURNO RAYHAAN POUR HOMME PERFUME",
         price: "24,700",
     },
     {

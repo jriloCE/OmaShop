@@ -86,25 +86,27 @@ function Handpicked() {
       </div>
 
       {/* Free Shipping / Services Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 mt-10">
-        {FreeShippingOrder.slice(0, 4).map((item) => {
-          const IconComponent = iconMap[item.icon];
-          return (
-            <div
-              key={item.id}
-              className="border border-gray-200 p-3 flex justify-center items-center space-x-3 rounded bg-white"
-            >
-              <span className="text-3xl text-[#FF496C]">
-                {IconComponent && <IconComponent />}
-              </span>
-              <div>
-                <strong className="text-gray-600 text-center block">{item.description}</strong>
-                <p className="font-bold text-black-600">{item.text}</p>
-              </div>
-            </div>
-          );
-        })}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
+  {FreeShippingOrder.slice(0, 4).map((item) => {
+    const IconComponent = iconMap[item.icon];
+    return (
+      <div
+        key={item.id}
+        className="p-4 flex items-center space-x-3 rounded-lg bg-white shadow-sm hover:shadow-md transition"
+      >
+        <span className="text-3xl text-[#FF496C]">
+          {IconComponent && <IconComponent />}
+        </span>
+        <div className="flex flex-col">
+          <strong className="text-gray-700">{item.description}</strong>
+          <p className="font-bold text-gray-900">{item.text}</p>
+        </div>
       </div>
+    );
+  })}
+</div>
+
+
     </div>
   );
 }
