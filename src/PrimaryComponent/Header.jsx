@@ -87,7 +87,7 @@ function Header() {
         {/* Large Screen Grid */}
         <div className="hidden lg:grid grid-cols-12 gap-4 items-center fixed w-full top-0 left-0 bg-white shadow-md z-50 px-4 py-3">
           {/* Logo */}
-          <div className="col-span-3 flex justify-center lg:justify-start">
+          <div className="col-span-3 flex justify-start">
             <a href="/">
               <img
                 src="https://tunatheme.com/tf/html/fiama-preview/fiama/img/logo.png"
