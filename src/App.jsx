@@ -60,9 +60,6 @@ function App() {
                 },
               }}
             />
-
-
-
         <Footer />
       </div>
     </CartProvider>
