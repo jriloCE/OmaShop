@@ -8,14 +8,19 @@ import { useCart } from '../ui/Checkout/CartContext';
 function Header() {
   const { cart } = useCart();
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const [showAccountMenu, setShowAccountMenu] = useState(false);
-  const accountMenuRef = useRef(null);
+  const [showMobileAccountMenu, setShowMobileAccountMenu] = useState(false);
+  const [showDesktopAccountMenu, setShowDesktopAccountMenu] = useState(false);
+  const mobileAccountMenuRef = useRef(null);
+  const desktopAccountMenuRef = useRef(null);
   
   // Close dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
-      if (accountMenuRef.current && !accountMenuRef.current.contains(event.target)) {
-        setShowAccountMenu(false);
+      if (mobileAccountMenuRef.current && !mobileAccountMenuRef.current.contains(event.target)) {
+        setShowMobileAccountMenu(false);
+      }
+      if (desktopAccountMenuRef.current && !desktopAccountMenuRef.current.contains(event.target)) {
+        setShowDesktopAccountMenu(false);
       }
     }
     
@@ -42,24 +47,24 @@ function Header() {
 
           {/* Icons (right) */}
           <div className="flex gap-5 text-2xl text-gray-700">
-            <div className="relative" ref={accountMenuRef}>
+            <div className="relative" ref={mobileAccountMenuRef}>
               <button 
                 className="hover:text-[#FF496C] transition" 
-                onClick={() => setShowAccountMenu(!showAccountMenu)}
+                onClick={() => setShowMobileAccountMenu(!showMobileAccountMenu)}
               >
                 <MdSupervisorAccount />
               </button>
               
               {/* Account Dropdown Menu */}
-              {showAccountMenu && (
+              {showMobileAccountMenu && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-7 z-50 border border-gray-200">
-                  <Link to="/register" className="block mx-5 px-2 py-3 mt-[-12px] text-sm text-center bg-[#FF496C] text-white rounded" onClick={() => setShowAccountMenu(false)}>
+                  <Link to="/register" className="block mx-5 px-2 py-3 mt-[-12px] text-sm text-center bg-[#FF496C] text-white rounded" onClick={() => setShowMobileAccountMenu(false)}>
                     Sign In
                   </Link>
-                  <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowAccountMenu(false)}>
+                  <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowMobileAccountMenu(false)}>
                     Profile
                   </Link>
-                  <Link to="/orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowAccountMenu(false)}>
+                  <Link to="/orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowMobileAccountMenu(false)}>
                     Order List
                   </Link>
                 </div>
@@ -109,25 +114,25 @@ function Header() {
 
           {/* Icons */}
           <div className="col-span-3 flex justify-end gap-6 text-2xl text-gray-700">
-            <div className="relative" ref={accountMenuRef}>
+            <div className="relative" ref={desktopAccountMenuRef}>
               <button 
                 className="hover:text-[#FF496C] transition" 
-                onClick={() => setShowAccountMenu(!showAccountMenu)}
+                onClick={() => setShowDesktopAccountMenu(!showDesktopAccountMenu)}
               >
                 <MdSupervisorAccount />
               </button>
               
               {/* Account Dropdown Menu */}
-              {showAccountMenu && (
+              {showDesktopAccountMenu && (
                 <div className="absolute right-0 mt-3 w-48 bg-white rounded-md shadow-lg py-7 z-50 border border-gray-200">
-                  <Link to="/register" className="block mx-5 px-2 py-3 mt-[-12px] text-sm text-center bg-[#FF496C] text-white rounded" onClick={() => setShowAccountMenu(false)}>
+                  <Link to="/register" className="block mx-5 px-2 py-3 mt-[-12px] text-sm text-center bg-[#FF496C] text-white rounded" onClick={() => setShowDesktopAccountMenu(false)}>
                       Sign In
                   </Link>
 
-                  <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowAccountMenu(false)}>
+                  <Link to="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowDesktopAccountMenu(false)}>
                     Profile
                   </Link>
-                  <Link to="/orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowAccountMenu(false)}>
+                  <Link to="/orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setShowDesktopAccountMenu(false)}>
                     Order List
                   </Link>
                 </div>
