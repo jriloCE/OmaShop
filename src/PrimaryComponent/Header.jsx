@@ -57,7 +57,7 @@ function Header() {
               
               {/* Account Dropdown Menu */}
               {showMobileAccountMenu && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-7 z-50 border border-gray-200">
+                <div className="fixed right-2 mt-17 w-48 bg-white rounded-md shadow-lg py-7 z-50 border border-gray-200">
                   <Link to="/register" className="block mx-5 px-2 py-3 mt-[-12px] text-sm text-center bg-[#FF496C] text-white rounded" onClick={() => setShowMobileAccountMenu(false)}>
                     Sign In
                   </Link>
