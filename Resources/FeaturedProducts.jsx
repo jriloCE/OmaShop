@@ -48,17 +48,17 @@ export const featuredproducts = [
         id: 9,
         image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/15/9082023/1.jpg",
         description: "New Fashionable Chain Ladies Bracelet",
-        price: 2.800,
+        price: 2800,
     },{
         id: 10,
         image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/09/6933461/1.jpg",
         description: "Bob Wigs",
-        price:  9.900,
+        price:  9900,
     },{
         id: 11,
         image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/56/2020401/1.jpg",
         description: "18inch_427 Highlight Body Wave Piano Wig For Pretty Ladies",
-        price: 9.000,
+        price: 9000,
     },{
         id: 12,
         image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/42/2400431/1.jpg",
