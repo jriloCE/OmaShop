@@ -43,7 +43,7 @@ export const featuredproducts = [
         id: 8,
         image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/69/4718504/1.jpg",
         description: "Peace Buckle Pendant Glass Jewelry Women's Bracelet",
-        price: 2.800,
+        price: 2800,
     }, {
         id: 9,
         image: "https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/15/9082023/1.jpg",
